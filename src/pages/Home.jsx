@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/hero'
+import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import Categoriesgrid from '../components/Categoriesgrid'
 import Reviews from '../components/Reviews'
