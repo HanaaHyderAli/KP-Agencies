@@ -5,11 +5,11 @@ const Contactus = () => {
     e.preventDefault();
   }
   return (
-    <form onSubmit={OnSubmitHandler} className='flex items-center justify-center'>
+    <form onSubmit={OnSubmitHandler} className='flex items-center justify-center lg:px-20 px-4'>
        <div className='flex flex-col gap-2 pb-32'>
           <h2 className='text-2xl text-amber-800 my-4 playwrite-hu text-center'> Contact Us</h2>
           <div className='flex flex-row gap-2'>
-            <input type='text' placeholder='First name' className='p-2 border border-gray-400 w-54'/> 
+            <input type='text' placeholder='First name' className='p-2 border border-gray-400 lg:w-54'/> 
              <input type='text' placeholder='Last name' className='p-2 border border-gray-400 w-54'/>
           </div>
           <input type='email' placeholder='Email address' className='p-2 border border-gray-400'/>
