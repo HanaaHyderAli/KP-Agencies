@@ -9,11 +9,11 @@ const Login = () => {
   return (
     <form onSubmit={OnSubmitHandler}  className='flex flex-col items-center gap-2 mb-25'>
       <h2 className="text-3xl text-amber-800 my-7 playwrite-hu">{currentState}</h2>
-      {currentState==='Login'?"":<input type='text' placeholder='Name' className='border border-gray-500 p-2 w-md'/>}
+      {currentState==='Login'?"":<input type='text' placeholder='Name' className='border border-gray-500 p-2 lg:w-md w-sm'/>}
       
-      <input type='email' placeholder='Email' className='border border-gray-500 p-2 w-md'/>
-      <input type='password' placeholder='Password' className='border border-gray-500 p-2 w-md'/>
-      <div className='flex flex-row w-md justify-between'>
+      <input type='email' placeholder='Email' className='border border-gray-500 p-2 lg:w-md w-sm'/>
+      <input type='password' placeholder='Password' className='border border-gray-500 p-2 lg:w-md w-sm'/>
+      <div className='flex flex-row lg:w-md w-sm justify-between'>
         {currentState==='Login'?<button className='cursor-pointer'>Forgot your password?</button>:""}
       {currentState==='Login'?<button onClick={()=>setCurrentState('Sign Up')}  className='cursor-pointer'>Create Account</button>:<button onClick={()=>setCurrentState('Login')} className='cursor-pointer'>Login here</button>}
       </div>
