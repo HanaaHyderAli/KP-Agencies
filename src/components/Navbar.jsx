@@ -6,6 +6,7 @@ import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const {getCartCount} = useContext(ShopContext);
+  const [isOpen,setIsOpen]=useState(false);
   
 
   return (
@@ -50,16 +51,19 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className="flex flex-row gap-9 relative">
-        <div className="group cursor-pointer relative ">
-          <img src={assets.user} width="25px" />
-          <div className="group-hover:block hidden absolute z-50 dropdown-menu  pt-2">
+        <div onClick={()=> setIsOpen(!isOpen)} className="group cursor-pointer relative ">
+          <img src={assets.user} width="25px" /></div>
+          {isOpen? 
+            <div className=" absolute top-6 z-50 dropdown-menu  pt-2">
             <div className="flex flex-col p-2 gap-2 w-24 border-2  border-slate-100 bg-amber-50">
               <Link to="/login"> <p className="fw  hover:text-amber-600 ">My Profile</p></Link>
               <Link to="/orders"><p className="fw  hover:text-amber-600">Orders</p></Link>
               <p className="fw  hover:text-amber-600"> Logout</p>
             </div>
-          </div>
-        </div>
+          </div>:''
+          }
+          
+        
         <Link to="/mycart" className="relative">
           <img src={assets.cart} width="30px" />
           <p className="absolute  right-[-5px] bottom-[-5px] text-[13px] text-white px-1
