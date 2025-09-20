@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 
 const CartData = () => {
-  const { currency, delivery_fee, getCartAmount } = useContext(ShopContext);
+  const { currency, delivery_fee, getCartAmount} = useContext(ShopContext);
+ 
+  
   return (
     <div className="flex flex-col gap-1 lg:w-lg w-sm mt-5">
       <div className="text-2xl my-3 text-amber-800 playwrite-hu"> Cart Totals</div>

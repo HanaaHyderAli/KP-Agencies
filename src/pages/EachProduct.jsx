@@ -43,7 +43,7 @@ const EachProduct = () => {
          <div className="border border-gray-200 w-full my-2"></div>
         <p className="mt-2 text-gray-500">100% Original product</p>
         <p className=" text-gray-500">Cash on delivery is available</p>
-       
+       `  `
       </div>
       
     </div>

@@ -165,7 +165,7 @@ export const product = [
     size:"700ml",
     image:[img5],
     category:"Fruitomans",
-    subCategory:"Squahes",
+    subCategory:"Squashes",
     bestseller:false
    },
 

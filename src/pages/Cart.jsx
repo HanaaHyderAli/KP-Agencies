@@ -7,6 +7,7 @@ const Cart = () => {
   const { product, currency, cartItems,updateQuantity ,navigate} = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   useEffect(() => {
+    if (product.length>0){
     const tempData = [];
     for (const items in cartItems) {
       if (cartItems[items] > 0) {
@@ -16,8 +17,8 @@ const Cart = () => {
         });
       }
     }
-    setCartData(tempData);
-  }, [cartItems]);
+    setCartData(tempData);}
+  }, [cartItems,product]);
 
   return (
     <div className=" lg:px-20 px-4 mb-16">

@@ -5,9 +5,15 @@ import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const {getCartCount} = useContext(ShopContext);
+  const {getCartCount, navigate,token,setToken,setCartItems} = useContext(ShopContext);
   const [isOpen,setIsOpen]=useState(false);
   
+  const logout=()=>{
+    navigate('/login')
+    localStorage.removeItem('token')
+    setToken('')
+    setCartItems({})
+  }
 
   return (
     <div className="flex justify-between items-center py-12 lg:px-20 px-4 relative">
@@ -50,15 +56,18 @@ const Navbar = () => {
           <hr className="h-1 w-10 bg-amber-400 mt-3 rounded-3xl border-0 hidden"></hr>
         </NavLink>
       </ul>
+
+
+
       <div className="flex flex-row gap-9 relative">
         <div onClick={()=> setIsOpen(!isOpen)} className="group cursor-pointer relative ">
-          <img src={assets.user} width="25px" /></div>
-          {isOpen? 
+          <img onClick={()=>token? null: navigate('/login')} src={assets.user} width="25px" /></div>
+          {isOpen && token ? 
             <div className=" absolute top-6 z-50 dropdown-menu  pt-2">
             <div className="flex flex-col p-2 gap-2 w-24 border-2  border-slate-100 bg-amber-50">
               <Link to="/login"> <p className="fw  hover:text-amber-600 ">My Profile</p></Link>
               <Link to="/orders"><p className="fw  hover:text-amber-600">Orders</p></Link>
-              <p className="fw  hover:text-amber-600"> Logout</p>
+              <p onClick={logout} className="fw  hover:text-amber-600"> Logout</p>
             </div>
           </div>:''
           }

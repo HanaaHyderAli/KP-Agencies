@@ -18,10 +18,13 @@ import "swiper/css/pagination";
 const Bestseller = () => {
   const { product } = useContext(ShopContext);
   const [bestSeller, setBestSeller] = useState([]);
+  console.log(product)
   useEffect(() => {
     const best = product.filter((item) => item.bestseller);
     setBestSeller(best.slice());
-  }, []);
+  }, [product]);
+
+  console.log("besttype",bestSeller)
 
   return (
     <div
